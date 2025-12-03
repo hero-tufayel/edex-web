@@ -1,0 +1,275 @@
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .all-\[unset\] {
+    all: unset;
+  }
+}
+
+:root {
+  --body-body-XL-font-family: "Public Sans", Helvetica;
+  --body-body-XL-font-size: 24px;
+  --body-body-XL-font-style: normal;
+  --body-body-XL-font-weight: 400;
+  --body-body-XL-letter-spacing: 0px;
+  --body-body-XL-line-height: 32px;
+  --body-large-400-font-family: "Public Sans", Helvetica;
+  --body-large-400-font-size: 20px;
+  --body-large-400-font-style: normal;
+  --body-large-400-font-weight: 400;
+  --body-large-400-letter-spacing: 0px;
+  --body-large-400-line-height: 28px;
+  --body-large-500-font-family: "Public Sans", Helvetica;
+  --body-large-500-font-size: 20px;
+  --body-large-500-font-style: normal;
+  --body-large-500-font-weight: 500;
+  --body-large-500-letter-spacing: 0px;
+  --body-large-500-line-height: 28px;
+  --body-regular-400-font-family: "Public Sans", Helvetica;
+  --body-regular-400-font-size: 16px;
+  --body-regular-400-font-style: normal;
+  --body-regular-400-font-weight: 400;
+  --body-regular-400-letter-spacing: 0px;
+  --body-regular-400-line-height: 24px;
+  --body-regular-500-font-family: "Public Sans", Helvetica;
+  --body-regular-500-font-size: 16px;
+  --body-regular-500-font-style: normal;
+  --body-regular-500-font-weight: 500;
+  --body-regular-500-letter-spacing: 0px;
+  --body-regular-500-line-height: 24px;
+  --body-regular-600-font-family: "Public Sans", Helvetica;
+  --body-regular-600-font-size: 16px;
+  --body-regular-600-font-style: normal;
+  --body-regular-600-font-weight: 600;
+  --body-regular-600-letter-spacing: 0px;
+  --body-regular-600-line-height: 24px;
+  --display-font-family: "Public Sans", Helvetica;
+  --display-font-size: 56px;
+  --display-font-style: normal;
+  --display-font-weight: 600;
+  --display-letter-spacing: 0px;
+  --display-line-height: 72px;
+  --gray-100: rgba(207, 211, 214, 1);
+  --gray-50: rgba(231, 233, 235, 1);
+  --gray-500: rgba(109, 115, 122, 1);
+  --gray-600: rgba(82, 86, 92, 1);
+  --gray-700: rgba(54, 58, 61, 1);
+  --grayblack: rgba(27, 29, 31, 1);
+  --graywhite: rgba(255, 255, 255, 1);
+  --header-heading-1-font-family: "Public Sans", Helvetica;
+  --header-heading-1-font-size: 40px;
+  --header-heading-1-font-style: normal;
+  --header-heading-1-font-weight: 600;
+  --header-heading-1-letter-spacing: 0px;
+  --header-heading-1-line-height: 48px;
+  --header-heading-3-font-family: "Public Sans", Helvetica;
+  --header-heading-3-font-size: 32px;
+  --header-heading-3-font-style: normal;
+  --header-heading-3-font-weight: 600;
+  --header-heading-3-letter-spacing: 0.24px;
+  --header-heading-3-line-height: 40px;
+  --header-heading-4-font-family: "Public Sans", Helvetica;
+  --header-heading-4-font-size: 24px;
+  --header-heading-4-font-style: normal;
+  --header-heading-4-font-weight: 600;
+  --header-heading-4-letter-spacing: 0.048000000715255745px;
+  --header-heading-4-line-height: 32px;
+  --primary-900: rgba(6, 36, 27, 1);
+  --secondary-50: rgba(255, 250, 245, 1);
+  --secondary-500: rgba(255, 194, 122, 1);
+  --x2nd-primary300: rgba(133, 160, 254, 1);
+  --x2nd-primary50: rgba(241, 242, 248, 1);
+  --x2nd-primary500: rgba(52, 97, 253, 1);
+  --x2nd-primary900: rgba(33, 33, 47, 1);
+}
+
+:root {
+  --animate-spin: spin 1s linear infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 1s var(--animation-delay, 0s) ease forwards;
+}
+
+.animate-fade-up {
+  animation: fade-up 1s var(--animation-delay, 0s) ease forwards;
+}
+
+.animate-marquee {
+  animation: marquee var(--duration) infinite linear;
+}
+
+.animate-marquee-vertical {
+  animation: marquee-vertical var(--duration) linear infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 8s infinite;
+}
+
+.animate-spin {
+  animation: var(--animate-spin);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes image-glow {
+  0% {
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.74, 0.25, 0.76, 1);
+  }
+
+  10% {
+    opacity: 0.7;
+    animation-timing-function: cubic-bezier(0.12, 0.01, 0.08, 0.99);
+  }
+
+  to {
+    opacity: 0.4;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes shimmer {
+  0%,
+  90%,
+  to {
+    background-position: calc(-100% - var(--shimmer-width)) 0;
+  }
+
+  30%,
+  60% {
+    background-position: calc(100% + var(--shimmer-width)) 0;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(0);
+  }
+
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+@keyframes marquee-vertical {
+  0% {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+  }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --card: transparent;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+
+    --card: transparent;
+    --card-foreground: 213 31% 91%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 216 34% 17%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
